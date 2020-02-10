@@ -1,0 +1,141 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="e-search-min.js"></script>
+</head>
+<body>
+
+
+
+  <div id="login_div" class="main-div">
+    <h3>Shop Video Games</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+    <button onclick="login()">Login to Account</button><br/>
+    <button onclick="createUser()">Create Account </button>
+    <p> Forgot Passowrd? Reset here:</p>
+    <a href= "#" id="reset-pass" onclick="resetPass()"> Reset Password</a>
+  </div>
+
+
+
+  <div id="resetPass" class="resetPass-div">
+   <input type="email" placeholder="Enter email .. " id="email_field"/>
+   <button id="resetPass" onclick="reset()"> Reset Password</button>
+  </div>
+
+
+
+  <div id="register_div" class="reg-div"> 
+      <p id="create_acct"> Register User!</p>
+      <label id="username">Name: </label>
+      <input type="username" name="username_txt" id="username_txt"/><br/>
+      <label id="email">Email: </label>
+      <input type="email" name="email_txt" id="email_txt"/><br/>
+      <label id="password">Password: </label>
+      <input type="password" name="pass_field" id="pass_field"/><br/> 
+      <label id="Phonenumber" > Phonenumber: </label>
+      <input type="number" name="phone_num" id="phone_num"/><br>
+      <label id="Address" > Address: </label>
+      <input type="text" name="address_txt" id="address_txt"/><br>
+      <button onclick="register()"> Register Account</button><br/>
+      <p>Login if you have an account</p>
+      <button onclick="returnlogin()"> Return to Login</button>
+  </div>
+
+
+  <div id="user_div" class="loggedin-div">
+    <ul id="listNavigation">
+
+      <li><a href="#Home">Home</a></li> 
+      <li><a href="#Profile"> Profile</a></li>
+      <li><a href="#Cart"> Cart</a></li>
+
+      <li><a href="#Cart"> <img class="images" alt="Cart" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/Cart.png" width="30" height="30"></a></li>
+      <li><label id="cartNumLabel"></label></li>
+
+    </ul>
+  </div>
+
+
+  
+  <div id="testsearch" class="testsearch-div">
+    <p id="welcomeuser"></p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br>
+    <br>
+
+
+    <a id="shopGames" img-title="Gravity Rush" class="imgtitle" href="#Gravity Rush" onclick="AddGravityRush()"> 
+      <img class="images" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/GravityRush.png" alt="Gravity Rush" height="100" width="100">
+      <h3 id="shopGravity" img-title="Gravity Rush">Gravity Rush</h3>
+    </a>
+  
+    <a id="shopCOD" img-title="Call of Duty" class="imgtitle" href="#Call of Duty" onclick="AddCOD()">
+      <img class="images" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/CODBlackOps.png" alt="Call of Duty" height="100" width="100">
+      <h3 >Call of Duty</h3>
+    </a>
+  
+    <a id="shopFIFA20" img-title="FIFA20" class="imgtitle" href="#FIFA20" onclick="AddFIFA20()">
+      <img class="images" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/FIFA20.png" alt="FIFA20" height="100" width="100" >
+      <h3>FIFA20 </h3>
+    </a>
+  
+  </div>
+
+    
+
+
+
+
+
+    <div id="addToCart" class="addToCart-div">
+      <p id="imageitem"></p>
+      <p id="UserItem"></p>
+      
+      <p> Quantity: <input type="text" id="qtyfield" placeholder="0" width="10" height="20"></p> 
+      <button onclick="confirmQty()" id="confirmProduct" class="button-basic"> Confirm Qty </button>
+
+      <p id="priceItem"></p>
+      <p id="itemCount"></p>
+      <button onclick="additem()"> Add to Cart</button>
+      <br>
+      <button onclick="returnHome()"> Return Home </button>
+    </div>
+
+    <div> </div>
+  
+
+
+    <div id="cartPage" class="cartPage-div">
+
+      <p> Item number: </p>
+      <p> Price </p>
+      <p id="itemNum"></p>
+      <p id="PriceNum"></p>
+
+    </div>
+
+
+
+
+
+
+  <div id="logoutbtn" class="logoutbtn-div">
+    <button onclick="logout()">Logout</button>
+  </div>
+  
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>
