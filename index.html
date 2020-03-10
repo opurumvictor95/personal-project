@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="e-search-min.js"></script>
 </head>
 <body>
 
@@ -51,42 +50,85 @@
 
 
   <div id="user_div" class="loggedin-div">
-    <ul id="listNavigation">
+    <ul>
+      <li><a class="active" href="#Home"> Home </a></li> 
+      <li><a href="#ContactUs"> Contact Us </a></li>
+      
+      <li><a href="#Profile"> Profile </a>
+        <ul>
+          <li><a href="#"> Account </a></li>
+          <li><a href="#"> Setting </a></li>
+          <li><a href="#" onclick="logout()"> Logout </a></li>
+        </ul>
+      </li>
 
-      <li><a href="#Home">Home</a></li> 
-      <li><a href="#Profile"> Profile</a></li>
-      <li><a href="#Cart"> Cart</a></li>
 
-      <li><a href="#Cart"> <img class="images" alt="Cart" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/Cart.png" width="30" height="30"></a></li>
-      <li><label id="cartNumLabel"></label></li>
+      <li><a href="#" onclick="displayCart()"> Cart </a></li>
+      <li><a href="#CartImg" onclick="displayCart()"> <img class="images" alt="Cart" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/Cart.png" width="30" height="30"></a></li>
+      <li><label id="cartNumLabel"> 0 items </label></li>
 
     </ul>
   </div>
 
 
-  
-  <div id="testsearch" class="testsearch-div">
-    <p id="welcomeuser"></p>
-    <input id="myInput" type="text" placeholder="Search..">
-    <br>
-    <br>
 
 
-    <a id="shopGames" img-title="Gravity Rush" class="imgtitle" href="#Gravity Rush" onclick="AddGravityRush()"> 
-      <img class="images" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/GravityRush.png" alt="Gravity Rush" height="100" width="100">
-      <h3 id="shopGravity" img-title="Gravity Rush">Gravity Rush</h3>
-    </a>
-  
-    <a id="shopCOD" img-title="Call of Duty" class="imgtitle" href="#Call of Duty" onclick="AddCOD()">
-      <img class="images" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/CODBlackOps.png" alt="Call of Duty" height="100" width="100">
-      <h3 >Call of Duty</h3>
-    </a>
-  
-    <a id="shopFIFA20" img-title="FIFA20" class="imgtitle" href="#FIFA20" onclick="AddFIFA20()">
-      <img class="images" src="/Users/victoropurum/Desktop/ShopGames/GameIcons/FIFA20.png" alt="FIFA20" height="100" width="100" >
-      <h3>FIFA20 </h3>
-    </a>
-  
+  <div style="text-align: center;">
+
+    <div id="testsearch" class="testsearch-div">
+      <p id="welcomeuser"></p>
+
+        <a href="#" data-filter="all" class="button active"> All Categories </a>
+        <a href="#" data-filter="one" class="button"> Action </a>
+        <a href="#" data-filter="two" class="button"> Adventure </a>
+        <a href="#" data-filter="three" class="button"> Sports </a>
+        
+    </div>
+ 
+
+    <div class="searchnavigation" id="searchnav">
+        <input id="myInput" type="text" placeholder="Search ..."> 
+    </div>
+
+
+    <div class="ImageContainer" id="ImageContainer-div">
+
+      <div class="filter one">
+          <a class="imgtitle" href="#Gravity Rush" id="shopGames" img-title="Gravity Rush" onclick="AddGravityRush()">
+            <img src="/Users/victoropurum/Desktop/ShopGames/GameIcons/GravityRush.png" id="gravrush">
+            <h3> Gravity Rush </h3>
+        </a>
+      </div>
+        
+
+      <div class="filter two">
+          <a  class="imgtitle" href="#Call of Duty" id="shopCOD" img-title="Call of Duty" onclick="AddCOD()">
+            <img src="/Users/victoropurum/Desktop/ShopGames/GameIcons/CODBlackOps.png">
+            <h3> Call of Duty </h3>
+        </a>
+      </div>
+
+
+      <div class="filter three">
+          <a class="imgtitle" href="#FIFA20" id="shopFIFA20" img-title="FIFA20"  onclick="AddFIFA20()">
+            <img src="/Users/victoropurum/Desktop/ShopGames/GameIcons/FIFA20.png">
+            <h3> FIFA 20 </h3>
+        </a>
+      </div>
+        
+
+      <div class="filter three">
+        <a class="imgtitle"  href="#Hockey" id="shopHockey" img-title="Hockey" onclick="AddHockey()">
+          <img src="/Users/victoropurum/Desktop/ShopGames/GameIcons/Hockey.png">
+          <h3>Hockey  </h3>
+       </a>
+      </div>
+
+      
+
+    
+    </div>
+
   </div>
 
     
@@ -94,26 +136,39 @@
 
 
 
-
     <div id="addToCart" class="addToCart-div">
+      
+
       <p id="imageitem"></p>
       <p id="UserItem"></p>
+
+      <p id="unitprice"> Unit Price: $30 </p>
+      <p id="currentQtyItems"></p>
       
-      <p> Quantity: <input type="text" id="qtyfield" placeholder="0" width="10" height="20"></p> 
+      
+      <p> Quantity: <input type="text" id="qtyfield" placeholder="0" width="5" height="5"></p> 
       <button onclick="confirmQty()" id="confirmProduct" class="button-basic"> Confirm Qty </button>
 
       <p id="priceItem"></p>
       <p id="itemCount"></p>
+
+
       <button onclick="additem()"> Add to Cart</button>
       <br>
-      <button onclick="returnHome()"> Return Home </button>
+
+      
+      <button onclick="returnHome()" id="returnhmbtn"> Return Home </button>
+
+
+      <p id="tryit"></p>
     </div>
 
-    <div> </div>
   
 
 
     <div id="cartPage" class="cartPage-div">
+
+      <h2> User Cart Page </h2>
 
       <p> Item number: </p>
       <p> Price </p>
@@ -122,6 +177,57 @@
 
     </div>
 
+
+
+    <div id="cartdiv" class="cartdiv-class">
+
+     <h2> Cart Page </h2>
+
+     <a> Item </a>
+     <a> Quantity </a>
+     <a> Price </a>
+
+     <div class="gravClass" id="gravclassdiv">
+      <p id="gravimageCart"></p>
+      <p id="gravitemCart"></p>
+      <p id="gravpriceCart"></p>
+      <input type="image" class="GravclassImg" id="GravImage" alt="MinusButton" onclick="deleteGrav()" src="/Users/victoropurum/Downloads/ShopGames/GameIcons/MinusButton.png" width="40" height="40" text-align="center"/>
+     </div> 
+
+
+     <div class="CODClass" id="CODclassdiv">
+      <p id="CODimageCart"></p>
+      <p id="CODitemCart"></p>
+      <p id="CODpriceCart"></p>
+      <input type="image" class="CODclassImg" id="CODImage" alt="MinusButton" onclick="deleteCOD()" src="/Users/victoropurum/Downloads/ShopGames/GameIcons/MinusButton.png" width="40" height="40" text-align="center"/>
+     </div> 
+
+     <div class="FIFAClass" id="FIFAclassdiv">
+      <p id="FIFAimageCart"></p>
+      <p id="FIFAitemCart"></p>
+      <p id="FIFApriceCart"></p>
+      <input type="image" class="FIFAclassImg" id="FIFAImage" alt="MinusButton" onclick="deleteFIFA()" src="/Users/victoropurum/Downloads/ShopGames/GameIcons/MinusButton.png" width="40" height="40" text-align="center"/>
+     </div> 
+
+
+     <div class="HockeyClass" id="Hockeyclassdiv">
+      <p id="HockeyimageCart"></p>
+      <p id="HockeyitemCart"></p>
+      <p id="HockeypriceCart"></p>
+      <input type="image" class="HockeyclassImg" id="HockeyImage" alt="MinusButton" onclick="deleteHockey()" src="/Users/victoropurum/Downloads/ShopGames/GameIcons/MinusButton.png" width="40" height="40" text-align="center"/>
+     </div> 
+
+
+     <a> Total: </a>
+     <a id="totalQuantityItem"></a>
+     <a id="totalPriceItem"></a>
+      
+
+
+    </div>
+
+   
+    
 
 
 
