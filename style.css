@@ -21,23 +21,60 @@ input, button {
 }
 
 
-ul#Menu img {
-  width: 200px;
-  height: 200px;
-}
-
-ul#Menu2 img {
-  width: 200px;
-  height: 200px;
-}
-
 
 .cartPage-div p {
-  display: inline-block;
+    display: inline-block;
     vertical-align: top;
-    padding: 50;
-   
+    padding: 50; 
+    text-align: center;
 }
+
+.cartPage-div#itemNum {
+  display: inline-block;
+  margin-top: 5px;
+
+}
+
+
+
+
+.cartdiv-class, .gravClass p{
+  display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 200px;
+  padding: 50px;
+}
+
+
+.cartdiv-class, .CODClass p{
+  display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 200px;
+  padding: 50px;
+  
+}
+
+
+.cartdiv-class, .FIFAClass p{
+  display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 200px;
+  padding: 50px;
+}
+
+
+.cartdiv-class, .HockeyClass p{
+  display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 200px;
+  padding: 50px;
+}
+
+
 
 
 .button-basic{
@@ -57,51 +94,9 @@ ul#Menu2 img {
 }
 
 
-ul#listNavigation {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  width: auto;
-}
-
-ul#listNavigation li {
-  float: left;
-} 
-
-ul#listNavigation a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-
-ul#listNavigation label {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-ul#listNavigation a:hover {
-  background-color: #111111;
-}
 
 
 
-.figureCaption {
-  text-align: center;
-  padding: 5px;
-}
-
-
-.figureCaption {
-  display: list-item;
-}
 
 
 .logoutbtn-div {
@@ -161,10 +156,9 @@ ul#listNavigation a:hover {
 }
 
 
-.main-div, .loggedin-div {
+.main-div {
   width: 50%;
   margin: 0px auto;
-  margin-top: 150px;
   padding: 20px;
   display: none;
 }
@@ -172,16 +166,123 @@ ul#listNavigation a:hover {
 
 
 
-.loggedin-div a {
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.loggedin-div {
+  width: 100%;
+  height: 60px;
+  background-color: #555;
   
-    float: left;
-    display: block;
-    color: black;
+}
+
+
+.loggedin-div ul {
+  float: left;
+}
+
+
+
+
+.loggedin-div ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+
+}
+
+
+.loggedin-div ul li a {
+  display: block;
+  font-family: arial;
+  color: #222;
+  font-size: 14px;
+  padding: 21px 14px;
+  text-decoration: none;
   
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+}
+
+
+.loggedin-div ul li #cartNumLabel {
+  display: block;
+  font-family: arial;
+  color: #222;
+  font-size: 14px;
+  padding: 21px 14px;
+  text-decoration: none;
   
+}
+
+
+
+.loggedin-div ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+
+.loggedin-div ul li a.active {
+  background-color: #4CAF50;
+}
+
+
+
+
+.loggedin-div ul li a:hover {
+  background-color: #000;
+  display: block;
+}
+
+
+
+
+.loggedin-div ul li:hover ul {
+  display: block;
+}
+
+
+
+.loggedin-div ul li ul li {
+  width: 180px;
+  border-radius: 4px;
+}
+
+
+
+
+.loggedin-div ul li ul li a {
+  padding: 8px 14px; 
+}
+
+
+
+
+.loggedin-div ul li ul li a:hover {
+  background-color: #f3f3f3;
+}
+
+
+
+
+
+#myInput {
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 500px;
+  padding: 5px 5px 5px 5px;
+}
+
+
+::placeholder {
+  text-align: center;
 }
 
 
@@ -269,7 +370,7 @@ ul#listNavigation a:hover {
   -moz-transition: 0.3s;
 }
 
-.main-div button, .loggedin-div button {
+.main-div button {
   background: #5d8ffc;
   color: #fff;
   border: 1px solid #5d8ffc;
@@ -330,6 +431,123 @@ ul#listNavigation a:hover {
   border: 1px solid #5d8ffc;
   cursor: pointer;
 }
+
+
+
+
+
+.testsearch-div {
+  padding: 15px 0px;
+}
+
+.searchnavigation {
+  padding: 15px 0px;
+}
+
+
+.testsearch-div a {
+  margin-right: 5px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 10px 25px;
+  border-radius: 50px;
+  color: blue;  
+}
+
+
+.testsearch-div p {
+  margin-right: 5px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  color: black;  
+}
+
+
+.testsearch-div a.active {
+  background-color: brown;
+  border-color: black;
+  color: coral;
+}
+
+.ImageContainer div {
+  display: inline-block;
+
+}
+
+.ImageContainer a {
+  display: inline-block;
+}
+
+
+
+
+
+.ImageContainer img {
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+}
+
+
+
+.addToCart-div {
+  text-align: center;
+}
+
+
+
+#qtyfield {
+  margin-top: 15px;
+  width: 25px;
+  height: 25px;
+}
+
+#UserItem {
+ text-align: center;
+  margin-top: 15px;
+}
+
+
+
+/*How to center an image using css*/
+#imageitem{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 50%;
+}
+
+
+ #confirmProduct {
+  margin-top: 5px;
+}
+
+#returnhmbtn {
+  margin-top: 5px;
+}
+
+
+.cartdiv-class h2 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.cartdiv-class a {
+
+  display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 280px;
+  padding: 50px;
+  margin-top: 15px;
+}
+
+
+
+
 
 
 
